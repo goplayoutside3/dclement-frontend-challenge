@@ -2,14 +2,30 @@
   "name": "dclement-frontend-challenge",
   "version": "0.1.0",
   "private": true,
+  "description": "Delilah Clement Front End Challenge for Fetch Rewards",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goplayoutside3/dclement-frontend-challenge"
+  },
+  "author": "Delilah Clement",
+  "license": "ISC",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "ENV=development next",
+    "build": "ENV=production next build",
+    "start": "ENV=production next start",
+    "export": "ENV=production npm run build && next export"
   },
   "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "classnames": "^2.2.6",
+    "isomorphic-unfetch": "^3.1.0",
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "sass-resources-loader": "^2.1.1"
   }
 }
