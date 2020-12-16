@@ -45,7 +45,7 @@ export default function Home() {
       <main>
         <h1>This is Delilah Clement's completed front end challenge.</h1>
         <ul>
-          {fetchedData &&
+          {fetchedData ?
             Object.keys(fetchedData).map((group) => (
               <ul key={group}>
                 <h2>List ID: {group}</h2>
@@ -53,7 +53,7 @@ export default function Home() {
                   <li key={item.id}>{item.name}</li>
                 ))}
               </ul>
-            ))}
+            )) : <p>Loading...</p>}
         </ul>
       </main>
     </div>
