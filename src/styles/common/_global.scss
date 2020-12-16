@@ -14,8 +14,14 @@ body {
 	line-height: 1;
 }
 
-section {
+main {
 	padding: $section-padding;
+	background-color: $sand;
+	min-height: 800px;
+
+	@media (min-width: 768px) {
+			min-height: 100vh;
+	}
 }
 
 h1, ul {

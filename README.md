@@ -1,6 +1,6 @@
 This is Delilah Clement's completed front end challenge as an application for Fetch Rewards Frontend Engineer.
 
-Deployed at [dclement-frontend-challenge.vercel.app/](https://dclement-frontend-challenge.vercel.app/).
+Deployed at [dclement-frontend-challenge.vercel.app](https://dclement-frontend-challenge.vercel.app).
 
 It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It uses SASS for styling and npm package [isomorphic-unfetch](https://www.npmjs.com/package/isomorphic-unfetch) to fetch data.
 
