@@ -10,15 +10,11 @@ body {
 	padding: 0;
 	font-size: 16px;
 	font-family: $tt-reg;
-	color: $white;
+	color: $black;
 }
 
 section {
 	padding: $section-padding;
-
-	@include media-breakpoint-up(xl) {
-		padding: 80px;
-	}
 }
 
 .container {
@@ -79,7 +75,7 @@ p {
 a {
 	cursor: pointer;
 	font-family: $tt-reg;
-	color: $white;
+	color: $black;
 	text-decoration: none;
 	transition: color $text-color-transition;
 
