@@ -1,3 +1,9 @@
-#home {
-    background-color: $sky-blue;
+.main {
+    background-color: $sand;
+    min-height: 800px;
+
+    @include media-breakpoint-up(md) {
+        min-height: 100vh;
+    }
 }
+
