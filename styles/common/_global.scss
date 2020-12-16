@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: $tt-reg;
+	color: $white;
+}
+
+section {
+	padding: $section-padding;
+
+	@include media-breakpoint-up(xl) {
+		padding: 80px;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1, .h2, .h3, .h4 {
+	margin-bottom: $copy-margin-bottom;
+	line-height: 1;
+	font-family: $tt-reg;
+	letter-spacing: 1px;
+}
+
+h1 {
+	font-size: 3rem;
+
+	@include media-breakpoint-up(md) {
+		font-size: 4rem;
+	}
+}
+
+.h2 {
+	font-size: 2rem;
+
+	@include media-breakpoint-up(md) {
+		font-size: 3rem;
+	}
+}
+
+.h3 {
+	font-size: 1.5rem;
+
+	@include media-breakpoint-up(md) {
+		font-size: 2rem;
+	}
+}
+
+.h4 {
+	font-size: 1.2rem;
+
+	@include media-breakpoint-up(md) {
+		font-size: 1.5rem;
+	}
+}
+
+p, li {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+p {
+	margin-bottom: $copy-margin-bottom;
+}
+
+a {
+	cursor: pointer;
+	font-family: $tt-reg;
+	color: $white;
+	text-decoration: none;
+	transition: color $text-color-transition;
+
+	&:hover {
+		color: $light-blue;
+	}
+}
