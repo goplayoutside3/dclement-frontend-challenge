@@ -11,24 +11,21 @@ export default function Home() {
   const [fetchedData, loadData] = useState(null);
 
   const getAllData = async () => {
-    // parsedData is an array of objects each with an id, listId, and name
     try {
       const response = await fetch('api/data');
       const parsedData = await response.json();
 
-      // filter out any objects where name property is blank
-      const filteredData = parsedData.filter(
-        (obj) => obj.name && obj.name.length
-      );
-
+      // filter out any objects where name property is blank or null
       // group objects by listId property
       const listMap = {};
-      filteredData.forEach((obj) => {
-        if (listMap[obj.listId]) listMap[obj.listId].push(obj);
-        else listMap[obj.listId] = [obj];
+      parsedData.forEach((obj) => {
+        if (obj.name && obj.name.length) {
+          if (listMap[obj.listId]) listMap[obj.listId].push(obj);
+          else listMap[obj.listId] = [obj];
+        }
       });
 
-      // for each group in listMap, sort objects by id
+      // for each group in listMap, sort objects by their id
       for (let group in listMap) {
         listMap[group].sort((a, b) => a.id - b.id);
       }
