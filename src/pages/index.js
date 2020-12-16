@@ -5,10 +5,10 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
-    getAllData()
-  }, [])
+    getAllData();
+  }, []);
 
-  const [fetchedData, loadData] = useState(null)
+  const [fetchedData, loadData] = useState(null);
 
   const getAllData = async () => {
     // parsedData is an array of objects each with an id, listId, and name
@@ -17,23 +17,25 @@ export default function Home() {
       const parsedData = await response.json();
 
       // filter out any objects where name property is blank
-      const filteredData = parsedData.filter(obj => obj.name && obj.name.length)
+      const filteredData = parsedData.filter(
+        (obj) => obj.name && obj.name.length
+      );
 
       // group objects by listId property
-      const listMap = {}
-      filteredData.forEach(obj => {
-        if (listMap[obj.listId]) listMap[obj.listId].push(obj)
-        else (listMap[obj.listId]) = [obj]
-      })
+      const listMap = {};
+      filteredData.forEach((obj) => {
+        if (listMap[obj.listId]) listMap[obj.listId].push(obj);
+        else listMap[obj.listId] = [obj];
+      });
 
       // for each group in listMap, sort objects by id
       for (let group in listMap) {
-        listMap[group].sort((a, b) => a.id - b.id)
+        listMap[group].sort((a, b) => a.id - b.id);
       }
 
-      // loadData(filteredData)
+      loadData(listMap);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -47,6 +49,17 @@ export default function Home() {
       <main className={styles.main}>
         <section>
           <h1>This is Delilah Clement's completed front end challenge.</h1>
+          <ul>
+            {fetchedData &&
+              Object.keys(fetchedData).map((group) => (
+                <ul key={group}>
+                  <h2>List ID: {group}</h2>
+                  {fetchedData[group].map((item) => (
+                    <li key={item.id}>{item.name}</li>
+                  ))}
+                </ul>
+              ))}
+          </ul>
         </section>
       </main>
     </div>

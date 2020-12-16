@@ -11,48 +11,32 @@ body {
 	font-size: 16px;
 	font-family: $tt-reg;
 	color: $black;
+	line-height: 1;
 }
 
 section {
 	padding: $section-padding;
 }
 
-h1, .h2, .h3, .h4 {
+h1, ul {
 	margin-bottom: $copy-margin-bottom;
-	line-height: 1;
-	font-family: $tt-reg;
-	letter-spacing: 1px;
 }
 
 h1 {
-	font-size: 3rem;
-}
-
-.h2 {
+	letter-spacing: 1px;
 	font-size: 2rem;
 }
 
-.h3 {
+h2 {
 	font-size: 1.5rem;
 }
 
-.h4 {
-	font-size: 1.2rem;
+ul {
+	list-style: inside;
 }
 
 p, li {
 	font-size: 1rem;
 	line-height: 1.5;
-	margin-bottom: $copy-margin-bottom;
 }
 
-a {
-	cursor: pointer;
-	color: $black;
-	text-decoration: none;
-	transition: color $text-color-transition;
-
-	&:hover {
-		color: $sky-blue;
-	}
-}
