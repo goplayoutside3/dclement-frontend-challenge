@@ -19,9 +19,14 @@ export default function Home() {
       // filter out any objects where name property is blank
       const filteredData = parsedData.filter(obj => obj.name && obj.name.length)
 
-      loadData(filteredData)
+      // group objects by listId property
+      const listMap = {}
+      filteredData.forEach(obj => {
+        if (listMap[obj.listId]) listMap[obj.listId].push(obj)
+        else (listMap[obj.listId]) = [obj]
+      })
 
-      // console.log(filteredData)
+      // loadData(filteredData)
     } catch (error) {
       console.log(error)
     }
