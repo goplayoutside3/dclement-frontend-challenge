@@ -1,5 +1,7 @@
 This is Delilah Clement's completed front end challenge as an application for Fetch Rewards Frontend Engineer.
 
+Deployed at [dclement-frontend-challenge.vercel.app/](https://dclement-frontend-challenge.vercel.app/).
+
 It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It uses SASS for styling and npm package [isomorphic-unfetch](https://www.npmjs.com/package/isomorphic-unfetch) to fetch data.
 
 ## Running the project locally
@@ -26,4 +28,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Display all the items grouped by "listId"
 - Sort the results first by "listId" then by "name" when displaying.
 - Filter out any items where "name" is blank or null.
-
