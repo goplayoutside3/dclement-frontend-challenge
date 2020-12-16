@@ -15,9 +15,15 @@ export default function Home() {
     try {
       const response = await fetch('api/data');
       const parsedData = await response.json();
-      loadData(parsedData)
+
+      // filter out any objects where name property is blank
+      const filteredData = parsedData.filter(obj => obj.name && obj.name.length)
+
+      loadData(filteredData)
+
+      // console.log(filteredData)
     } catch (error) {
-      console.log('Something went wrong')
+      console.log(error)
     }
   };
 
