@@ -26,6 +26,11 @@ export default function Home() {
         else (listMap[obj.listId]) = [obj]
       })
 
+      // for each group in listMap, sort objects by id
+      for (let group in listMap) {
+        listMap[group].sort((a, b) => a.id - b.id)
+      }
+
       // loadData(filteredData)
     } catch (error) {
       console.log(error)
